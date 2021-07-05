@@ -1,15 +1,18 @@
-const score = (word) => {
-    const scoreCount = 0;
+export const score = (wordString) => {
+    if (!wordString) return 0;
 
-    [...word].map((words) => {
-      console.log(words);
-      Object.keys(lettersValue).map((key, index) => {
-            if (lettersValue[index] == words) console.log(`${index}+${words}+${key}`); scoreCount + key;
-        });
-    });
+    let count = 0;
+    const word = wordString.toLowerCase();
 
-    console.log(scoreCount)
-    return scoreCount;
+    for (let i = 0; i < word.length; i++) {
+        for (const [key, value] of Object.entries(lettersValue)) {
+            for (let a = 0; a < value.length; a++) {
+                if (value[a] === word[i]) count += Number(key);
+            }
+        }
+    }
+
+    return count;
 };
 
 const lettersValue = {
@@ -21,6 +24,3 @@ const lettersValue = {
     8: ["j", "x"],
     10: ["q", "z"],
 };
-
-
-score("word")
