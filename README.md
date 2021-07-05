@@ -1,2 +1,2 @@
-# exercism-javascript
-Mine Javascript Exercism Track
+# Exercism javascript track solutions
+> [Exercism](https://exercism.io/) JavaScript Track Solutions
