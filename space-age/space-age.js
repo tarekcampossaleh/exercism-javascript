@@ -12,4 +12,5 @@ const planets = {
     neptune: 164.79132,
 };
 
+
 const earthYear = 31557600;
