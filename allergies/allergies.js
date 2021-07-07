@@ -7,9 +7,9 @@ export class Allergies {
 
     allergicTo(allergicItem) {
         if (!allergicItem) return false;
-        if (Allergies.score - 2 ** items.indexOf(allergicItem) == 0)
-            return true;
-        return Allergies.score - 2 ** items.indexOf(allergicItem) > 0;
+        if (Allergies.score == 2 ** items.indexOf(allergicItem)) return true;
+        if((2 ** items.indexOf(allergicItem) )*2 == 256) return Allergies.score - (2 ** items.indexOf(allergicItem)) - ((2 ** items.indexOf(allergicItem))/2) >= 0
+        return Allergies.score - (2 ** items.indexOf(allergicItem)) - ((2 ** items.indexOf(allergicItem))*2) >= 0;
     }
 }
 
