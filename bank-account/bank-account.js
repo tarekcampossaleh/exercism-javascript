@@ -1,8 +1,3 @@
-//
-// This is only a SKELETON file for the 'Bank Account' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class BankAccount {
     constructor() {
         this._balance = 0;
@@ -43,5 +38,3 @@ export class ValueError extends Error {
         super("Bank account error");
     }
 }
-
-// throw new ValueError()
