@@ -9,13 +9,16 @@ export class Allergies {
         // items.map((item) => {
         //     if (this.allergicTo(item)) returnedItems.push(item);
         // });
+        let aux = Allergies.score;
         for (let i = items.length; i >= 0; i--) {
             if (this.allergicTo(items[i])) {
-                if (Allergies.score == 2 ** items.indexOf(items[i])) {
-                    returnedItems.push(items[i]);
-                    break;
-                }
-                returnedItems.push(items[i]);
+                if (aux == 0) break;
+                aux -= 2 ** items.indexOf(items[i]);
+                // if (Allergies.score == 2 ** items.indexOf(items[i])) {
+                //     returnedItems.push(items[i]);
+                //     break;
+                // }
+                // returnedItems.push(items[i]);
             }
         }
         return returnedItems;
