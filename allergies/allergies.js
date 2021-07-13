@@ -6,9 +6,18 @@ export class Allergies {
     list() {
         let returnedItems = [];
         if (Allergies.score == 0) return [];
-        items.map((item) => {
-            if (this.allergicTo(item)) returnedItems.push(item);
-        });
+        // items.map((item) => {
+        //     if (this.allergicTo(item)) returnedItems.push(item);
+        // });
+        for (let i = items.length; i >= 0; i--) {
+            if (this.allergicTo(items[i])) {
+                if (Allergies.score == 2 ** items.indexOf(items[i])) {
+                    returnedItems.push(items[i]);
+                    break;
+                }
+                returnedItems.push(items[i]);
+            }
+        }
         return returnedItems;
     }
 
