@@ -3,4 +3,4 @@ export const isPangram = (sentence) => {
     return alphabet.every((letter) => sentenceLowerCase.includes(letter));
 };
 
-const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+const alphabet = [...'qwertyuiopasdfghjklzxcvbnm'];
