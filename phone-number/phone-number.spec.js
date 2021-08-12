@@ -40,61 +40,61 @@ describe('Phone Number', () => {
       );
     });
 
-    xtest('invalid with letters', () => {
+    test('invalid with letters', () => {
       expect(() => clean('123-abc-7890')).toThrow(
         new Error('Letters not permitted')
       );
     });
 
-    xtest('invalid with punctuations', () => {
+    test('invalid with punctuations', () => {
       expect(() => clean('123-@:!-7890')).toThrow(
         new Error('Punctuations not permitted')
       );
     });
 
-    xtest('invalid if area code starts with 0', () => {
+    test('invalid if area code starts with 0', () => {
       expect(() => clean('(023) 456-7890')).toThrow(
         new Error('Area code cannot start with zero')
       );
     });
 
-    xtest('invalid if area code starts with 1', () => {
+    test('invalid if area code starts with 1', () => {
       expect(() => clean('(123) 456-7890')).toThrow(
         new Error('Area code cannot start with one')
       );
     });
 
-    xtest('invalid if exchange code starts with 0', () => {
+    test('invalid if exchange code starts with 0', () => {
       expect(() => clean('(223) 056-7890')).toThrow(
         new Error('Exchange code cannot start with zero')
       );
     });
 
-    xtest('invalid if exchange code starts with 1', () => {
+    test('invalid if exchange code starts with 1', () => {
       expect(() => clean('(223) 156-7890')).toThrow(
         new Error('Exchange code cannot start with one')
       );
     });
 
-    xtest('invalid if area code starts with 0 on valid 11-digit number', () => {
+    test('invalid if area code starts with 0 on valid 11-digit number', () => {
       expect(() => clean('1 (023) 456-7890')).toThrow(
         new Error('Area code cannot start with zero')
       );
     });
 
-    xtest('invalid if area code starts with 1 on valid 11-digit number', () => {
+    test('invalid if area code starts with 1 on valid 11-digit number', () => {
       expect(() => clean('1 (123) 456-7890')).toThrow(
         new Error('Area code cannot start with one')
       );
     });
 
-    xtest('invalid if exchange code starts with 0 on valid 11-digit number', () => {
+    test('invalid if exchange code starts with 0 on valid 11-digit number', () => {
       expect(() => clean('1 (223) 056-7890')).toThrow(
         new Error('Exchange code cannot start with zero')
       );
     });
 
-    xtest('invalid if exchange code starts with 1 on valid 11-digit number', () => {
+    test('invalid if exchange code starts with 1 on valid 11-digit number', () => {
       expect(() => clean('1 (223) 156-7890')).toThrow(
         new Error('Exchange code cannot start with one')
       );
