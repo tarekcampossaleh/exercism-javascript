@@ -3,15 +3,39 @@ export class Triangle {
     this.sides = [...sides];
   }
 
+  get isInequality() {
+    this.sides.sort();
+    if (this.sides[2] > this.sides[0] + this.sides[1]) return false;
+    return true;
+  }
+
   get isEquilateral() {
-    return this.sides[0] === this.sides[1] && this.sides[1] == this.sides[2] && this.sides[0] != 0
+    this.sides.sort()
+    if (this.sides[2] > this.sides[0] + this.sides[1]) return false;
+    return (
+      this.sides[0] === this.sides[1] &&
+      this.sides[1] == this.sides[2] &&
+      this.sides[0] != 0
+    );
   }
 
   get isIsosceles() {
-    throw new Error("Remove this statement and implement this function");
+    this.sides.sort()
+    if (this.sides[2] > this.sides[0] + this.sides[1]) return false;
+    return (
+      this.sides[0] == this.sides[1] ||
+      this.sides[0] == this.sides[2] ||
+      this.sides[1] == this.sides[2]
+    );
   }
 
   get isScalene() {
-    throw new Error("Remove this statement and implement this function");
+    this.sides.sort()
+    if (this.sides[2] > this.sides[0] + this.sides[1]) return false;
+    return (
+      this.sides[0] != this.sides[1] &&
+      this.sides[0] != this.sides[2] &&
+      this.sides[1] != this.sides[2]
+    );
   }
 }
